@@ -21,17 +21,19 @@ class TextDisplayViewModel(): ViewModel() {
     val displayText = MutableLiveData<String>()
 
     fun onButtonClick(newText: String) {
-        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
-        val newEntry = "[$currentTime] $newText"
+        if (newText.isNotEmpty()){
+            val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+            val newEntry = "[$currentTime] $newText"
 
-        val existingText = displayText.value ?: ""
-        val updatedText = if (existingText.isEmpty()) {
-            newEntry
-        } else {
-            "$newEntry\n$existingText"
+            val existingText = displayText.value ?: ""
+            val updatedText = if (existingText.isEmpty()) {
+                newEntry
+            } else {
+                "$newEntry\n$existingText"
+            }
+
+            displayText.value = updatedText
         }
-
-        displayText.value = updatedText
     }
 
 

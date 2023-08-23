@@ -6,7 +6,9 @@ import com.example.envitiatexttask.viewmodel.TextDisplayViewModel
 import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
+import org.mockito.ArgumentMatchers.any
 import org.mockito.Mock
+import org.mockito.Mockito.never
 import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
 import java.text.SimpleDateFormat
@@ -35,12 +37,21 @@ class TextDisplayViewModelTest {
 
     @Test
     fun `onButtonClick updates displayText with new entry`() {
-        val newText1 = "Hello, World!"
-        val currentTime1 = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
-        val expectedEntry1 = "[$currentTime1] $newText1"
+        val newText = "Hello, World!"
+        val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+        val expectedEntry = "[$currentTime] $newText"
 
-        viewModel.onButtonClick(newText1)
+        viewModel.onButtonClick(newText)
 
-        verify(observer).onChanged(expectedEntry1)
+        verify(observer).onChanged(expectedEntry)
+    }
+
+    @Test
+    fun `onButtonClick does not update displayText with empty text`() {
+        val newText = "" // Empty text
+
+        viewModel.onButtonClick(newText)
+
+        verify(observer, never()).onChanged(any())
     }
 }
