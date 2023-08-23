@@ -9,9 +9,12 @@ import org.junit.Test
 import org.mockito.Mock
 import org.mockito.Mockito.verify
 import org.mockito.MockitoAnnotations
+import java.text.SimpleDateFormat
 import java.time.Clock
 import java.time.Instant
 import java.time.ZoneId
+import java.util.Date
+import java.util.Locale
 
 class TextDisplayViewModelTest {
     @get:Rule
@@ -25,25 +28,19 @@ class TextDisplayViewModelTest {
     @Before
     fun setUp() {
         MockitoAnnotations.initMocks(this)
-        // Create a fixed instant for testing
-        val fixedInstant = Instant.parse("2023-08-23T12:00:00Z")
-
-        // Create a MockClockProvider with the fixed instant
-        val mockClockProvider = MockClockProvider(fixedInstant)
-
-        // Create the ViewModel with the MockClockProvider
-        viewModel = TextDisplayViewModel(mockClockProvider)
+        viewModel = TextDisplayViewModel()
         viewModel.displayText.observeForever(observer)
     }
 
+
     @Test
     fun `onButtonClick updates displayText with new entry`() {
-        val newText = "Hello, World!"
-        val fixedInstant = Instant.parse("2023-08-23T12:00:00Z")
-        val expectedEntry = "[12:00] $newText"
+        val newText1 = "Hello, World!"
+        val currentTime1 = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
+        val expectedEntry1 = "[$currentTime1] $newText1"
 
-        viewModel.onButtonClick(newText)
+        viewModel.onButtonClick(newText1)
 
-        verify(observer).onChanged(expectedEntry)
+        verify(observer).onChanged(expectedEntry1)
     }
 }

@@ -23,10 +23,14 @@ class TextDisplayViewModel(): ViewModel() {
     fun onButtonClick(newText: String) {
         val currentTime = SimpleDateFormat("HH:mm", Locale.getDefault()).format(Date())
         val newEntry = "[$currentTime] $newText"
-//        Log.d(ContentValues.TAG, "onButtonClick: $newEntry")
 
         val existingText = displayText.value ?: ""
-        val updatedText = "$newEntry\n$existingText"
+        val updatedText = if (existingText.isEmpty()) {
+            newEntry
+        } else {
+            "$newEntry\n$existingText"
+        }
+
         displayText.value = updatedText
     }
 
