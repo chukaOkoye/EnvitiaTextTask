@@ -12,6 +12,7 @@ FUNCTIONALITY
 
 
 DELIVERABLES
+
 :heavy_check_mark: 1. Unit tests.
 
 :heavy_check_mark: 2. Simple Espresso UI test (optional).
