@@ -3,13 +3,17 @@
 FUNCTIONALITY
 
 :heavy_check_mark: 1. Enter text and press OK button to append to the list along with the time the button was clicked.
+
 :heavy_check_mark: 2. Text should also be written to a text file on the device.
+
 :heavy_check_mark: 4. Use a layout.xml file to create the view
+
 :heavy_check_mark: 5. Use a view model to update the text with timestamps
 
 
 DELIVERABLES
 :heavy_check_mark: 1. Unit tests.
+
 :heavy_check_mark: 2. Simple Espresso UI test (optional).
 
 ## My Approach
