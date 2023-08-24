@@ -2,17 +2,14 @@ package com.example.envitiatexttask
 
 import android.content.ContentValues
 import android.content.Context
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.example.envitiatexttask.databinding.ActivityMainBinding
 import com.example.envitiatexttask.viewmodel.TextDisplayViewModel
 import java.io.IOException
-import java.text.SimpleDateFormat
-import java.util.Date
-import java.util.Locale
 
 class MainActivity : AppCompatActivity() {
 
