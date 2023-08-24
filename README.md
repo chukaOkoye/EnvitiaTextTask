@@ -2,15 +2,15 @@
 
 FUNCTIONALITY
 
-[x] 1. Enter text and press OK button to append to the list along with the time the button was clicked.
-[x] 2. Text should also be written to a text file on the device.
-[x] 4. Use a layout.xml file to create the view
-[x] 5. Use a view model to update the text with timestamps
+:heavy_check_mark: 1. Enter text and press OK button to append to the list along with the time the button was clicked.
+:heavy_check_mark: 2. Text should also be written to a text file on the device.
+:heavy_check_mark: 4. Use a layout.xml file to create the view
+:heavy_check_mark: 5. Use a view model to update the text with timestamps
 
 
 DELIVERABLES
-[x] 1. Unit tests.
-[x] 2. Simple Espresso UI test (optional).
+:heavy_check_mark: 1. Unit tests.
+:heavy_check_mark: 2. Simple Espresso UI test (optional).
 
 ## My Approach
 - In this task, I followed the requirements to create a simple text entry interface using XML layout files. Users can input text and click an "OK" button. Upon clicking, the entered text is displayed along with a timestamp. I used the ViewModel to manage the data and logic.
