@@ -6,9 +6,9 @@ FUNCTIONALITY
 
 :heavy_check_mark: 2. Text should also be written to a text file on the device.
 
-:heavy_check_mark: 4. Use a layout.xml file to create the view
+:heavy_check_mark: 3. Use a layout.xml file to create the view
 
-:heavy_check_mark: 5. Use a view model to update the text with timestamps
+:heavy_check_mark: 4. Use a view model to update the text with timestamps
 
 
 DELIVERABLES
